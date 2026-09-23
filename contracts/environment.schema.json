@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes-web.local/contracts/environment.schema.json",
+  "title": "HarnessEnvironment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["workspace_roots"],
+  "properties": {
+    "cwd": { "type": ["string", "null"] },
+    "workspace_roots": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "platform": { "type": ["string", "null"] },
+    "shell": { "type": ["string", "null"] },
+    "permission_profile": { "type": ["string", "null"] },
+    "enabled_toolsets": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+  }
+}
