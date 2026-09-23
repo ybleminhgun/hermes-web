@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes-web.local/contracts/identity.schema.json",
+  "title": "HarnessTurnIdentity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["runtime", "session_id", "turn_id", "round_id", "request_id", "purpose", "context_epoch"],
+  "properties": {
+    "runtime": { "const": "hermes" },
+    "session_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": ["string", "null"] },
+    "turn_id": { "type": "string", "minLength": 1 },
+    "round_id": { "type": "string", "minLength": 1 },
+    "request_id": { "type": "string", "minLength": 1 },
+    "parent_session_id": { "type": ["string", "null"] },
+    "purpose": { "type": "string", "enum": ["agent_turn", "auxiliary", "health", "diagnostic"] },
+    "context_epoch": { "type": "integer", "minimum": 0 }
+  }
+}
