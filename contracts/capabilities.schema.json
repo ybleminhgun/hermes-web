@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hermes-web.local/contracts/capabilities.schema.json",
+  "title": "HarnessCapabilities",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tool_names"],
+  "properties": {
+    "tool_names": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  }
+}
